@@ -3,7 +3,6 @@ import {nanoid} from 'nanoid';
 import dotenv from 'dotenv';
 import connectDB from './src/config/mongo.config.js';
 
-
 dotenv.config("./.env");
 
 
