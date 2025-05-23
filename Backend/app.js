@@ -3,6 +3,7 @@ import {nanoid} from 'nanoid';
 import dotenv from 'dotenv';
 import connectDB from './src/config/mongo.config.js';
 import short_url from './src/routes/short_url.routes.js';
+import { redirectFromShortUrl } from './src/controller/short_url.controller.js';
 
 dotenv.config("./.env");
 
@@ -13,6 +14,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
 app.use('/api/create', short_url);
+app.use('/:id', redirectFromShortUrl)
 
 
 app.listen(3000, () => {
